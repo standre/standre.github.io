@@ -1,0 +1,112 @@
+<html manifest="cache.manifest">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="_style/mobile.css">
+<link rel="stylesheet" type="text/css" href="_style/patternlock.css">
+<script src="_script/patternlock.js">
+<script src="_script/sha.js">
+<script src="_script/supergenpass.js">
+<script type="text/javascript">
+" document.addEventListener("copy", clipboard, false); document.addEventListener("cut", clipboard, false); function clipboard(e) { //window.location.reload(); //scroll(0,0); clipboadData(e); } function gp2_react(e) { if(e.keyCode==8||e.keyCode==32||(e.keyCode>45&&e.keyCode<91)||(e.keyCode>95&&e.keyCode<112)||(e.keyCode>185&&e.keyCode<223)) { if(e.target.getAttribute('id')=='Passwd') { document.getElementById('PasswdField').style.backgroundColor='#fff'; document.getElementById('PasswdLabel').style.color='#000'; } if(e.target.getAttribute('id')=='Domain') { document.getElementById('DomainField').style.backgroundColor='#fff'; document.getElementById('DomainLabel').style.color='#000'; } document.getElementById('ResultMD5').style.display='none'; document.getElementById('ResultSHA3').style.display='none'; document.getElementById('AvatarPattern').style.display='none'; document.getElementById('AvatarSHA3').style.display='none'; } if (e.target.getAttribute('id')=='Len' || e.target.getAttribute('id')=='PasswdText') { document.getElementById('Passwd').value = document.getElementById("PasswdText").value; if (document.getElementById('Passwd').value) { SGPLocal(false); } } return true; } function SGPLocal(doCopy) { document.getElementById('Pattern').hidden = true; document.getElementById('Master').hidden = false; document.getElementById('PasswdText').value = document.getElementById("Passwd").value; var Passwd=document.getElementById('Passwd').value; var DisableTLD=(document.getElementById('DisableTLD').checked)?true:false; var Domain=document.getElementById('Domain').value; var Len=gp2_validate_length(document.getElementById('Len').value); document.getElementById('Len').value=Len; document.getElementById('LenValue').value=Len; if (Domain) { Domain=gp2_process_uri(Domain,DisableTLD); document.getElementById('Domain').value=Domain; if (Passwd) { document.getElementById('ResultMD5').removeChild(document.getElementById('ResultMD5').firstChild); document.getElementById('ResultMD5').appendChild(document.createTextNode(gp2_generate_passwd(Passwd+':'+Domain,Len))); document.getElementById('ResultMD5').style.display='block'; document.getElementById('ResultSHA3').removeChild(document.getElementById('ResultSHA3').firstChild); document.getElementById('ResultSHA3').appendChild(document.createTextNode(calcHMAC("SHA3-512",Domain,Passwd,Len))); document.getElementById('ResultSHA3').style.display='block'; document.getElementById('AvatarPattern').removeChild(document.getElementById('AvatarPattern').firstChild); document.getElementById('AvatarPattern').appendChild(document.createElement('avatar')); document.getElementById('AvatarPattern').firstChild.innerHTML = calcAvatar(Passwd); document.getElementById('AvatarPattern').style.display='block'; document.getElementById('AvatarSHA3').removeChild(document.getElementById('AvatarSHA3').firstChild); document.getElementById('AvatarSHA3').appendChild(document.createElement('avatar')); document.getElementById('AvatarSHA3').firstChild.innerHTML = calcAvatar(calcHMAC("SHA3-512",Domain,Passwd,Len)); document.getElementById('AvatarSHA3').style.display='block'; if (allowsLocalStorage) { localStorage.MobileDomain = Domain; localStorage.MobileLen = Len; localStorage.MobileDisableTLD = ( DisableTLD ) ? 'true' : 'false'; } if (doCopy) { var Result = document.getElementById('ResultSHA3').firstChild; var sel = window.getSelection(); var range = document.createRange(); document.designMode = "on"; range.setStart(Result, 0); range.setEnd(Result, Len); sel.removeAllRanges(); sel.addRange(range); document.execCommand("bold", false, null); document.execCommand("bold", true, null); document.designMode = "off"; } } else { document.getElementById('PasswdField').style.backgroundColor='#fcc'; document.getElementById('PasswdLabel').style.color='#600'; } } else { document.getElementById('DomainField').style.backgroundColor='#fcc'; document.getElementById('DomainLabel').style.color='#600'; if (!(Passwd)) { document.getElementById('PasswdField').style.backgroundColor='#fcc'; document.getElementById('PasswdLabel').style.color='#600'; } } return false; } "
+</script>
+<title>Mer Wases Net</title>
+<style type="text/css">
+</style>
+<style type="text/css">
+</style>
+</head>
+<body>
+<noscript>
+" <section id="Warning"> <p><strong>Warning: JavaScript is disabled!</strong></p> </section> "
+</noscript>
+<section>
+<br>
+<form class="html5-form" name="form" onsubmit="SGPLocal(true); return false;" action="https://localhost:9/" method="POST">
+<fieldset id="DomainField" class="First" onclick="document.getElementById('Domain').focus();">
+<label id="DomainLabel" for="Domain">Domain</label>
+<div class="Field">
+<input id="Domain" name="Domain" autocorrect="off" autocapitalize="off" onkeydown="gp2_react(event);" onchange="gp2_react(event);" type="url">
+</div>
+</fieldset>
+<fieldset id="LenField" onclick="document.getElementById('Len').focus();">
+<label id="LenLabel" for="Len">Length</label>
+<div class="LenFieldDiv">
+<input id="Len" name="Len" type="range" min="12" max="24" value="24" oninput="gp2_react(event); LenValue.value=value">
+<output id="LenValue">24</output>
+</div>
+</fieldset>
+<fieldset id="PasswdField" onclick="document.getElementById('Passwd').focus();">
+<div class="Field" id="Pattern">
+<input id="Passwd" name="Passwd" onkeydown="gp2_react(event);" onchange="gp2_react(event);" type="password" class="patternlock" style="display: none;">
+<div class="patternlockcontainer">
+<div class="patternlocklineshorizontalcontainer">
+<div class="patternlocklinehorizontal" id="line12">
+<div class="patternlocklinehorizontal" id="line23">
+<div class="patternlocklinehorizontal" id="line45">
+<div class="patternlocklinehorizontal" id="line56">
+<div class="patternlocklinehorizontal" id="line78">
+<div class="patternlocklinehorizontal" id="line89">
+</div>
+<div class="patternlocklinesverticalcontainer">
+<div class="patternlocklinevertical" id="line14">
+<div class="patternlocklinevertical" id="line25">
+<div class="patternlocklinevertical" id="line36">
+<div class="patternlocklinevertical" id="line47">
+<div class="patternlocklinevertical" id="line58">
+<div class="patternlocklinevertical" id="line69">
+</div>
+<div class="patternlocklinesdiagonalcontainer">
+<div class="patternlocklinediagonalforward" id="line24">
+<div class="patternlocklinediagonalforward" id="line35">
+<div class="patternlocklinediagonalforward" id="line57">
+<div class="patternlocklinediagonalforward" id="line68">
+</div>
+<div class="patternlocklinesdiagonalcontainer">
+<div class="patternlocklinediagonalbackwards" id="line15">
+<div class="patternlocklinediagonalbackwards" id="line26">
+<div class="patternlocklinediagonalbackwards" id="line48">
+<div class="patternlocklinediagonalbackwards" id="line59">
+</div>
+<div class="patternlockbuttoncontainer">
+<div class="patternlockbutton" id="patternlockbutton1">
+<div class="patternlockbutton" id="patternlockbutton2">
+<div class="patternlockbutton" id="patternlockbutton3">
+<div class="patternlockbutton" id="patternlockbutton4">
+<div class="patternlockbutton" id="patternlockbutton5">
+<div class="patternlockbutton" id="patternlockbutton6">
+<div class="patternlockbutton" id="patternlockbutton7">
+<div class="patternlockbutton" id="patternlockbutton8">
+<div class="patternlockbutton" id="patternlockbutton9">
+</div>
+<div style="display: none;" class="patternlockbutton touched">
+<div style="display: none;" class="patternlockbutton touched multiple">
+</div>
+</div>
+<div class="Field" id="Master" hidden>
+<label id="PasswdLabel" for="PasswdText">Master</label>
+<div class="Field">
+<input id="PasswdText" name="PasswdText" type="tel" autocorrect="off" autocapitalize="off" onkeydown="gp2_react(event);" onchange="gp2_react(event);">
+</div>
+</div>
+</fieldset>
+<fieldset id="TLDField">
+<label id="TLDLabel" for="DisableTLD">Keep Subdomain</label>
+<input id="DisableTLD" name="DisableTLD" type="checkbox">
+</fieldset>
+<fieldset id="AvatarField" class="Last">
+<div id="AvatarPattern"> </div>
+<div id="AvatarSHA3"> </div>
+</fieldset>
+<div id="ResultMD5"> </div>
+<div id="ResultSHA3"> </div>
+</form>
+</section>
+<script type="text/javascript">
+" document.getElementById("Master").hidden = true; var allowsLocalStorage = (('localStorage' in window) && window['localStorage'] !== null) ? true : false; if (allowsLocalStorage) { if(localStorage.MobileDomain) { document.getElementById('Domain').value = localStorage.MobileDomain; } if(localStorage.MobileLen) { document.getElementById('Len').value = localStorage.MobileLen; document.getElementById('LenValue').value = localStorage.MobileLen; } if(localStorage.MobileDisableTLD && localStorage.MobileDisableTLD == 'true') { document.getElementById('DisableTLD').checked = true; } } if(document.referrer && document.referrer != document.URL) { document.getElementById('Domain').value = document.referrer; } "
+</script>
+</body>
+<div style="all: initial;">
+</html>
