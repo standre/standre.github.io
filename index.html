@@ -18,8 +18,8 @@
 			document.addEventListener("cut", clipboard, false);
 
 			function clipboard(e) {
-			    window.location.reload();
-			    scroll(0,0);
+			    //window.location.reload();
+			    //scroll(0,0);
 			    clipboadData(e);
 			}
 
@@ -116,7 +116,7 @@
 
 		</script>
 
-		<title>SuperGenPattern</title>
+		<title>Mer Wases Net</title>
 
 	</head>
 	<body>
@@ -127,7 +127,7 @@
 		</noscript>
 		<section>
             </br>
-			<form class="html5-form" name="form" onsubmit="SGPLocal(true); return false;" action="http://localhost:9/" method="POST">
+			<form class="html5-form" name="form" onsubmit="SGPLocal(true); return false;" action="https://localhost:9/" method="POST">
 				<fieldset id="DomainField" class="First" onclick="document.getElementById('Domain').focus();">
 					<label id="DomainLabel" for="Domain">Domain</label>
 					<div class="Field">
@@ -148,7 +148,8 @@
 					<div class="Field" id="Master">
                         <label id="PasswdLabel" for="PasswdText">Master</label>
                         <div class="Field">
-                            <input id="PasswdText" name="PasswdText" autocorrect="off" autocapitalize="off" onkeydown="gp2_react(event);" onchange="gp2_react(event);" />
+                            <input id="PasswdText" name="PasswdText" type="tel"
+			    autocorrect="off" autocapitalize="off" onkeydown="gp2_react(event);" onchange="gp2_react(event);" />
                         </div>
                     </div>
 				</fieldset>
@@ -188,8 +189,5 @@
 			}
 
 		</script>
-		
-		<script>(function(d, s){if(!window.rel){s = d.createElement("script");s.type = "text/javascript";s.async = true;s.id = "radio-de-embedded";s.src = "//www.radio.de/inc/microsite/js/full.js";d.getElementsByTagName("head")[0].appendChild(s);window.rel = true;}}(document));</script><div class="ng-app-embedded"><div ui-view class="microsite embedded-radio-player" data-playerwidth="100%" data-playertype="web_embedded" data-playstation="radioparadise" data-apikey="df04ff67dd3339a6fc19c9b8be164d5b5245ae93"></div></div>
-		
 	</body>
 </html>
