@@ -39,7 +39,7 @@ body{
 
 
 .patternlockbutton{
-	background-image:url(../_img/button.png);
+	background-image:url(button.png);
 	background-repeat:no-repeat;
 	display:block;
 	width:53px;
@@ -50,15 +50,15 @@ body{
 }
 
 .touched{
-	background-image:url(../_img/button_active.png);
+	background-image:url(button_active.png);
 }
 
 .multiple{
-	background-image:url(../_img/button_active2.png);
+	background-image:url(button_active2.png);
 }
 
 .patternlocklinehorizontal{
-	background-image:url(../_img/line_hor.png);
+	background-image:url(line_hor.png);
 	background-repeat:no-repeat;
 	height:83px;
 	width:53px;
@@ -69,7 +69,7 @@ body{
 }
 
 .patternlocklinevertical{
-	background-image:url(../_img/line_ver.png);
+	background-image:url(line_ver.png);
 	background-repeat:no-repeat;
 	height:53px;
 	width:83px;
@@ -80,7 +80,7 @@ body{
 }
 
 .patternlocklinediagonalforward{
-	background-image:url(../_img/line_diagonal1.png);
+	background-image:url(line_diagonal1.png);
 	background-repeat:no-repeat;
 	height:83px;
 	width:83px;
@@ -91,7 +91,7 @@ body{
 }
 
 .patternlocklinediagonalbackwards{
-	background-image:url(../_img/line_diagonal2.png);
+	background-image:url(line_diagonal2.png);
 	background-repeat:no-repeat;
 	height:83px;
 	width:83px;
